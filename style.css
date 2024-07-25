@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+.portfolio{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000;
+    color: #fff;
+}
+.portfolio nav{
+    display: flex;
+    align-items: center;
+    padding: 24px 48px;
+}
+.portfolio nav .logo h2{
+    font-size: 32px;
+    color: #0fe2ff;
+    text-transform: uppercase;
+    margin-right: 50px;
+    animation: logo 2s forwards;
+}
+@keyframes logo {
+    from{
+        transform: translateY(-150%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+.portfolio nav ul{
+    display: flex;
+    gap: 65px;
+    list-style: none;
+    animation: tags 2s forwards;
+}
+@keyframes tags {
+    from{
+        opacity: 0;
+        transform: translateY(300%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.portfolio nav ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    transition: all 0.4s ease;
+}
+
+.portfolio nav ul li a::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background-color:#0fe2ff ;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+    }
+    .portfolio .active,
+.portfolio nav ul li a:hover{
+    color: #0fe2ff;
+}
+
+.portfolio .active::after,
+.portfolio nav ul li a:hover::after{
+    width: 100%;
+}
+
+.portfolio .hero_section{
+display: flex ;
+justify-content: space-between;
+align-items: center ;
+padding: 32px 48px;
+}
+
+.portfolio .hero_section .image_section{
+    padding-top: 8px;
+    padding-right: 5px;
+}
+
+.portfolio .hero_section .image_section img{
+    border-radius: 50% ;
+    border: 5px solid #0fe2ff;
+    height: 400px;
+    width: 400px;
+    animation: mainImg 3s linear infinite alternate;
+}
+
+@keyframes mainImg {
+    from{
+        transform: translateY(-15%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+.hero_section .text_section{
+    max-width: 50%;
+    padding-top: 10%;
+}
+
+.hero_section .text_section h3{
+    font-size: 36px;
+    font-weight: 800;
+    animation: text 2s forwards;
+}
+@keyframes text {
+    from{
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+.hero_section .text_section h3 span{
+    color: #0fe2ff; 
+}
+
+.hero_section .text_section h4{
+    font-size: 30px;
+    color: #0fe2ff;
+    margin: 8px 0 20px 0;
+    animation: text 2s forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+ 
+.hero_section .text_section p{
+    font-size: 20px;
+    letter-spacing: 1px;
+    animation: paragraph 2s forwards;
+}
+@keyframes paragraph {
+    from{
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+.hero_section .text_section .socialMedia{
+    margin: 24px 0 42px 0;
+    display: flex;
+    gap: 32px ;
+    animation: social 2s forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+@keyframes social {
+    from{
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.hero_section .text_section .socialMedia i{
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.hero_section .text_section .socialMedia i:hover{
+    color: #0fe2ff;
+    transition: all 0.4s ease-in;
+}
+
+.hero_section .text_section .socialMedia a{
+    text-decoration: none;
+    color: #fff;
+}
+.portfolio .buttons{
+    display: flex;
+    gap: 34px;
+    padding-bottom: 5%;
+    }
+
+.portfolio button{
+    padding: 8px 32px;
+    border-radius: 50px;
+    outline: none;
+    border: 3px solid transparent;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.4s ease-in;
+    animation: button 3s forwards;
+    }
+@keyframes button {
+    from{
+        opacity: 0;
+        transform: translateY(200%);
+    }
+    to{
+        opacity: 1;
+        transform:  translateY(0%);
+    }
+    }
+.portfolio button:hover{
+    background-color: transparent;
+    border: 8px solid #fff;
+    color: #fff;
+    }
+
+button.primary_btn{
+    background-color: #0fe2ff;
+
+    }
+
+button.primary_btn:hover{
+    border: 3px solid #0fe2ff ;
+    color: #0fe2ff;
+
+    }
+
+.mobile_menu i{
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    }
+@media screen and (max-width: 1024px){
+    .mobile_menu i{
+    display: block;
+    }
+.portfolio nav ul{
+    position: fixed;
+    top: 65px;
+    left: -100%;
+    z-index: 1;
+    background-color: #0fe2ff;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    text-align: center;
+    animation: none;
+    transition: all 0.6s ease;
+    }
+    #click:checked ~ ul{
+        left: 0;
+    }
+    .portfolio nav ul li {
+        margin: 48px 0;
+        display: block;
+    }
+    #click:checked ~ .mobile_menu i::before{
+        content: '\f00d';
+        }
+    .portfolio .active, .portfolio nav ul li a:hover{
+        color: #000;
+    }
+.portfolio .hero_section{
+    flex-direction: column;
+    padding: 0;
+    }
+.portfolio .hero_section .image_section img{
+    height: 300px;
+    width: 300px;
+    margin-left: 3%;
+    }
+
+    #click{
+        display: none;
+    }
+    @keyframes mainImg {
+        from{
+            transform: translateY(-10%);
+        }
+        to{
+            transform: translateY(0%);
+        }
+    }
+
+    .hero_section .text_section{
+        max-width: 90%;
+        padding-top: 0;
+    }
+
+    .hero_section .text_section h3{
+        font-size: 24px;
+    }
+
+    .hero_section .text_section h4{
+        font-size: 20px;
+    }
+    .hero_section .text_section p{
+        font-size: 16px;
+    }
+    .portfolio button{
+        padding: 6px 18px;
+        font-size: 12px;
+    }
+}
